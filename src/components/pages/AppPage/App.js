@@ -1,18 +1,15 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {RouteComponentProps} from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
+import Dropzone from 'react-dropzone';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Api from '../../../service/api';
+import './App.css';
 
 const URL = 'http://localhost:3001';
 
-interface AppPageProps extends RouteComponentProps {
-
-}
-
-function App(props: AppPageProps) {
+function App(props) {
 
   const initialState = {
     email: '',
@@ -26,7 +23,7 @@ function App(props: AppPageProps) {
 
   let [state, setState] = useState(initialState);
 
-  const handleChange = (val: string, field: string) => {
+  const handleChange = (val, field) => {
     console.log('val', val);
 
     setState({
@@ -49,15 +46,20 @@ function App(props: AppPageProps) {
       age: state.age,
     };
 
-    axios({
-      method: 'post',
-      headers,
-      url: `${URL}/sign-up`,
-      data: {user}
-    }).then((res) => {
+    Api.post('/sign-up', {user}).then((res) => {
       console.log('SUCCESS', res);
 
     });
+
+    // axios({
+    //   method: 'post',
+    //   headers,
+    //   url: `${URL}/sign-up`,
+    //   data: {user}
+    // }).then((res) => {
+    //   console.log('SUCCESS', res);
+    //
+    // });
   };
 
   const handleLogin = () => {
@@ -84,6 +86,15 @@ function App(props: AppPageProps) {
     });
   };
 
+  const handleAddPhoto = (data) => {
+    const form = new FormData();
+    form.append('image', data[0]);
+    const headers = {
+      'Content-Type': 'multipart/form-data'
+    };
+    return Api.post('/upload/image', form, headers);
+  };
+
   console.log('state', state);
 
   return (
@@ -106,6 +117,7 @@ function App(props: AppPageProps) {
         label="Password"
         onChange={(val) => handleChange(val.target.value, 'password')}
       />
+
 
       <Button
         onClick={handleSubmit}
@@ -140,6 +152,21 @@ function App(props: AppPageProps) {
       >
         Search
       </Button>
+      <Dropzone
+        className='photo'
+        onDrop={handleAddPhoto}
+        accept='image/jpeg,image/jpg,image/png'
+        multiple={false}
+      >
+        {({getRootProps, getInputProps}) => (
+          <section>
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              <p>Drag 'n' drop some files here, or click to select files</p>
+            </div>
+          </section>
+        )}
+      </Dropzone>
     </div>
   );
 }

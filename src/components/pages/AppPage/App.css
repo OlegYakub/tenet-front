@@ -1,0 +1,19 @@
+
+
+.photo {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	border: #e8444a solid;
+	background-color: #eeeeee;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+}
+
+.add-photo {
+	font-weight: 500;
+	font-size: 30px;
+	color: gray;
+	line-height: 160px;
+}
