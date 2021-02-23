@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import Dropzone from 'react-dropzone';
-import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Api from '../../../service/api';
 import './App.css';
 
-const URL = 'http://localhost:3001';
 
-function App(props) {
+function App() {
 
   const initialState = {
     email: '',
@@ -18,7 +15,8 @@ function App(props) {
     age: '',
     searchUserEmail: '',
     loginEmail: '',
-    loginPassword: ''
+    loginPassword: '',
+    imageId: null
   };
 
   let [state, setState] = useState(initialState);
@@ -32,13 +30,7 @@ function App(props) {
     })
   };
 
-  const handleSubmit = () => {
-    let headers = {
-      Accept: 'application/json',
-      'Content-Type': 'application/json; charset=utf-8',
-      'X-Requested-With': 'XMLHttpRequest',
-    };
-
+  const handleRegistr = () => {
     const user = {
       email: state.email,
       password: state.password,
@@ -50,16 +42,6 @@ function App(props) {
       console.log('SUCCESS', res);
 
     });
-
-    // axios({
-    //   method: 'post',
-    //   headers,
-    //   url: `${URL}/sign-up`,
-    //   data: {user}
-    // }).then((res) => {
-    //   console.log('SUCCESS', res);
-    //
-    // });
   };
 
   const handleLogin = () => {
@@ -86,16 +68,33 @@ function App(props) {
     });
   };
 
-  const handleAddPhoto = (data) => {
+  const handleAddPhoto = async (data) => {
     const form = new FormData();
     form.append('image', data[0]);
     const headers = {
       'Content-Type': 'multipart/form-data'
     };
-    return Api.post('/upload/image', form, headers);
+    const res = await Api.post('/upload/image', form, headers);
+    console.log('imageData', res);
+    setState({
+      ...state,
+      imageId: res.image.id,
+    })
+  };
+
+  const handleUpdateProfile = async () => {
+    if (!state.imageId) {
+      return alert('Error');
+    }
+    const data = {imageId: state.imageId};
+    const res = await Api.post('/update-user', data);
+    console.log('res', res);
+
   };
 
   console.log('state', state);
+
+
 
   return (
     <div>
@@ -120,7 +119,7 @@ function App(props) {
 
 
       <Button
-        onClick={handleSubmit}
+        onClick={handleRegistr}
       >
         SignUp
       </Button>
@@ -167,6 +166,11 @@ function App(props) {
           </section>
         )}
       </Dropzone>
+      <Button
+        onClick={handleUpdateProfile}
+      >
+        Update Profile
+      </Button>
     </div>
   );
 }

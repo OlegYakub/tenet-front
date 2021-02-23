@@ -1,17 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
-
+import {Route, Switch, withRouter} from 'react-router-dom';
 import * as pages from '../components/pages';
-
 import * as ROUTES from './routes';
 
 // eslint-disable-next-line
 const RouterComponent = () => {
-  const token = false;
-  const loginedConfig = [
 
-  ];
   const notLoginedConfig = [
     {
       id: 'app',
