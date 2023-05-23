@@ -20,8 +20,6 @@ function App() {
   let [state, setState] = useState(initialState);
 
   const handleChange = (val: string, field: string) => {
-    console.log('val', val);
-
     setState({
       ...state,
       [field]: val,
