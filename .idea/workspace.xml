@@ -335,7 +335,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684855405195</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="test codecov">
+      <created>1684855796262</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684855796262</updated>
+    </task>
+    <task id="LOCAL-00032" summary="test codecov">
+      <created>1684855897766</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684855897766</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
