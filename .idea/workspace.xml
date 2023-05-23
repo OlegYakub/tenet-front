@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f69ad17-e087-43e4-b83c-3f341e386146" name="Changes" comment="test CI/CD">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+    <list default="true" id="1f69ad17-e087-43e4-b83c-3f341e386146" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/AppPage/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/AppPage/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/Router.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configure/configureStore.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configure/rootMiddleware.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configure/rootReducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configure/rootSaga.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/globals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/history.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +59,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.selected.package.eslint" value="$USER_HOME$/.nvm/versions/node/v16.15.0/lib/node_modules/eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v16.15.0/bin/node" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -139,7 +125,7 @@
       <workItem from="1681132093952" duration="38000" />
       <workItem from="1681132138966" duration="1518000" />
       <workItem from="1682063593117" duration="1065000" />
-      <workItem from="1684833783076" duration="7894000" />
+      <workItem from="1684833783076" duration="8437000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1684833805099</created>
@@ -246,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684842455964</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test">
+      <created>1684844439120</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684844439120</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,9 +257,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
     <MESSAGE value="test CI/CD" />
-    <option name="LAST_COMMIT_MESSAGE" value="test CI/CD" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

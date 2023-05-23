@@ -126,7 +126,6 @@ function AppPage() {
       </Button>
       <Dropzone
         onDrop={handleAddPhoto}
-        accept="image/jpeg,image/jpg,image/png"
         multiple={false}
       >
         {({ getRootProps, getInputProps }) => (
