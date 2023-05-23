@@ -18,7 +18,7 @@ export default class Api {
     return `${DOMAIN_URI}${API_URI}${route}`;
   }
 
-  static get(route: string, params: KeyValModel, appendHeaders: KeyValModel, newHeaders: KeyValModel) {
+  static get(route: string, params: KeyValModel, appendHeaders?: KeyValModel, newHeaders?: KeyValModel) {
     return Api.request(
       route,
       params,
@@ -85,15 +85,7 @@ export default class Api {
         return resp.data;
       })
       .catch((err) => {
-        Api.handleError(err);
         throw err;
       });
-  }
-
-  static handleError(error: any) {
-    const response = error.response || error;
-
-    if (Number(response.status) === 401) {
-    }
   }
 }

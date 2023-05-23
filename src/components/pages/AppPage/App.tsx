@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Dropzone from 'react-dropzone';
 import Button from '@material-ui/core/Button';
 import Api from '../../../service/api';
 import './App.css';
 
-
 function App() {
-
   const initialState = {
     email: '',
     password: '',
@@ -16,7 +14,7 @@ function App() {
     searchUserEmail: '',
     loginEmail: '',
     loginPassword: '',
-    imageId: null
+    imageId: null,
   };
 
   let [state, setState] = useState(initialState);
@@ -27,7 +25,7 @@ function App() {
     setState({
       ...state,
       [field]: val,
-    })
+    });
   };
 
   const handleRegistr = () => {
@@ -38,9 +36,8 @@ function App() {
       age: state.age,
     };
 
-    Api.post('/sign-up', {user}).then((res) => {
+    Api.post('/sign-up', { user }).then(res => {
       console.log('SUCCESS', res);
-
     });
   };
 
@@ -51,15 +48,15 @@ function App() {
     };
 
     Api.get('/login', data).then(res => {
-      console.log('SUCCESS', res);
-      alert('LOGIN SUCCESS');
-      localStorage.setItem('token', res.token)
+      // console.log('SUCCESS', res);
+      // alert('LOGIN SUCCESS');
+      // localStorage.setItem('token', res.token)
     });
   };
   //
   const handleGetUserInfo = () => {
-    const data =  {
-      email: state.searchUserEmail
+    const data = {
+      email: state.searchUserEmail,
     };
 
     Api.get('/get-user', data).then(res => {
@@ -72,104 +69,78 @@ function App() {
     const form = new FormData();
     form.append('image', data[0]);
     const headers = {
-      'Content-Type': 'multipart/form-data'
+      'Content-Type': 'multipart/form-data',
     };
     const res = await Api.post('/upload/image', form, headers);
-    console.log('imageData', res);
-    setState({
-      ...state,
-      imageId: res.image.id,
-    })
   };
 
   const handleUpdateProfile = async () => {
     if (!state.imageId) {
       return alert('Error');
     }
-    const data = {imageId: state.imageId};
+    const data = { imageId: state.imageId };
     const res = await Api.post('/update-user', data);
     console.log('res', res);
-
   };
 
   console.log('state', state);
 
-
-
   return (
     <div>
-      <div >
+      <div>
         <h1>SIGN UP</h1>
-      <TextField
-        label="Name"
-        onChange={(val) => handleChange(val.target.value, 'name')}
-      />
-      <TextField
-        label="Age"
-        onChange={(val) => handleChange(val.target.value, 'age')}
-      />
-      <TextField
-        label="Email"
-        onChange={(val) => handleChange(val.target.value, 'email')}
-      />
-      <TextField
-        label="Password"
-        onChange={(val) => handleChange(val.target.value, 'password')}
-      />
+        <TextField
+          label="Name"
+          onChange={val => handleChange(val.target.value, 'name')}
+        />
+        <TextField label="Age" onChange={val => handleChange(val.target.value, 'age')} />
+        <TextField
+          label="Email"
+          onChange={val => handleChange(val.target.value, 'email')}
+        />
+        <TextField
+          label="Password"
+          onChange={val => handleChange(val.target.value, 'password')}
+        />
 
-
-      <Button
-        onClick={handleRegistr}
-      >
-        SignUp
-      </Button>
+        <Button onClick={handleRegistr}>SignUp</Button>
       </div>
       <h1>LOGIN</h1>
 
       <TextField
         label="Email"
-        onChange={(val) => handleChange(val.target.value, 'loginEmail')}
+        onChange={val => handleChange(val.target.value, 'loginEmail')}
       />
       <TextField
         label="Password"
-        onChange={(val) => handleChange(val.target.value, 'loginPassword')}
+        onChange={val => handleChange(val.target.value, 'loginPassword')}
       />
-      <Button
-        onClick={handleLogin}
-        color="primary"
-      >
+      <Button onClick={handleLogin} color="primary">
         Log In
       </Button>
       <h1>GET USER</h1>
       <TextField
         label="Email"
-        onChange={(val) => handleChange(val.target.value, 'searchUserEmail')}
+        onChange={val => handleChange(val.target.value, 'searchUserEmail')}
       />
-      <Button
-        onClick={handleGetUserInfo}
-        color="primary"
-      >
+      <Button onClick={handleGetUserInfo} color="primary">
         Search
       </Button>
       <Dropzone
         onDrop={handleAddPhoto}
-        accept='image/jpeg,image/jpg,image/png'
+        accept="image/jpeg,image/jpg,image/png"
         multiple={false}
       >
-        {({getRootProps, getInputProps}) => (
+        {({ getRootProps, getInputProps }) => (
           <section>
             <div {...getRootProps()}>
               <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here, or click to select files</p>
+              <p>Drag n drop some files here, or click to select files</p>
             </div>
           </section>
         )}
       </Dropzone>
-      <Button
-        onClick={handleUpdateProfile}
-      >
-        Update Profile
-      </Button>
+      <Button onClick={handleUpdateProfile}>Update Profile</Button>
     </div>
   );
 }
