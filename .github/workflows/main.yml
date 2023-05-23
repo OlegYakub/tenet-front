@@ -26,8 +26,12 @@ jobs:
         run: npm run build:cicd
       - name: lint code
         run: npm run lint
+      - name: Generate coverage report
+        run: |
+            pip install pytest
+            pip install pytest-cov
+            pytest --cov=./ --cov-report=xml
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
           token: 6d742bf8-7711-4673-ac66-12fb0a2b0031
-          files: ./coverage1.xml
