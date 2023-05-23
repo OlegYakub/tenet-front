@@ -30,4 +30,4 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: 6d742bf8-7711-4673-ac66-12fb0a2b0031
-          files: ./coverage1.xml,./coverage2.xml
+          files: ./coverage1.xml
