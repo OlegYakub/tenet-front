@@ -46,6 +46,7 @@ function AppPage() {
     };
 
     Api.get('/login', data).then(res => {
+      console.log('res', res);
       // console.log('SUCCESS', res);
       // alert('LOGIN SUCCESS');
       // localStorage.setItem('token', res.token)
@@ -70,6 +71,7 @@ function AppPage() {
       'Content-Type': 'multipart/form-data',
     };
     const res = await Api.post('/upload/image', form, headers);
+    console.log('res', res);
   };
 
   const handleUpdateProfile = async () => {
