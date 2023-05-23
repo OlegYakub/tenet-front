@@ -3,9 +3,8 @@ import {Route, Switch, withRouter} from 'react-router-dom';
 import * as pages from '../components/pages';
 import * as ROUTES from './routes';
 
-// eslint-disable-next-line
 const RouterComponent = () => {
-
+  const a = 'a';
   const notLoginedConfig = [
     {
       id: 'app',
