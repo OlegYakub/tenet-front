@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f69ad17-e087-43e4-b83c-3f341e386146" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/AppPage/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/AppPage/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
-    </list>
+    <list default="true" id="1f69ad17-e087-43e4-b83c-3f341e386146" name="Changes" comment="test CI/CD" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +62,16 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -98,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.lint" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
@@ -116,7 +113,7 @@
       <workItem from="1681132093952" duration="38000" />
       <workItem from="1681132138966" duration="1518000" />
       <workItem from="1682063593117" duration="1065000" />
-      <workItem from="1684833783076" duration="5500000" />
+      <workItem from="1684833783076" duration="5901000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1684833805099</created>
@@ -174,7 +171,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684837129129</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test CI/CD">
+      <created>1684841195257</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684841195257</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test CI/CD">
+      <created>1684841231456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684841231456</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test CI/CD">
+      <created>1684841471783</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684841471783</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +211,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="test CI/CD" />
+    <option name="LAST_COMMIT_MESSAGE" value="test CI/CD" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
