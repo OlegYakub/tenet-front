@@ -27,7 +27,7 @@ jobs:
       - name: lint code
         run: npm run lint
       - name: Upload coverage reports to Codecov
-        uses:
+        run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           chmod +x codecov
           ./codecov -t ${CODECOV_TOKEN}
