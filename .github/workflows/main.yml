@@ -23,7 +23,7 @@ jobs:
       - name: install modules
         run: npm install
       - name: build project
-        run: DISABLE_ESLINT_PLUGIN=true react-scripts build
+        run: npm run build:cicd
       - name: lint code
         run: npm run lint
       - name: Upload coverage reports to Codecov
