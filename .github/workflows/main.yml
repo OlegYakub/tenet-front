@@ -7,7 +7,7 @@ on: [push]
 jobs:
   init:
     runs-on: ubuntu-latest
-    stragegy:
+    strategy:
       matrix:
         node-version: [16.15.x]
     steps:
