@@ -1,13 +1,10 @@
 import React from 'react';
+import AppPage from "./components/pages/AppPage/App";
 
-interface AppCompProps {
-  children: JSX.Element
-}
-
-const AppComp = (props: AppCompProps) => {
+const AppComp = () => {
   return (
     <>
-      {props.children}
+      <AppPage/>
     </>
   );
 };

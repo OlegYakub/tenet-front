@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import Api from '../../../service/api';
 import './App.css';
 
-function App() {
+function AppPage() {
   const initialState = {
     email: '',
     password: '',
@@ -143,4 +143,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppPage;
