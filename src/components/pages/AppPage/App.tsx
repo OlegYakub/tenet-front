@@ -21,7 +21,7 @@ function App() {
 
   let [state, setState] = useState(initialState);
 
-  const handleChange = (val, field) => {
+  const handleChange = (val: string, field: string) => {
     console.log('val', val);
 
     setState({
@@ -68,7 +68,7 @@ function App() {
     });
   };
 
-  const handleAddPhoto = async (data) => {
+  const handleAddPhoto = async (data: File[]) => {
     const form = new FormData();
     form.append('image', data[0]);
     const headers = {
@@ -152,7 +152,6 @@ function App() {
         Search
       </Button>
       <Dropzone
-        className='photo'
         onDrop={handleAddPhoto}
         accept='image/jpeg,image/jpg,image/png'
         multiple={false}
