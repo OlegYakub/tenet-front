@@ -46,10 +46,8 @@ function AppPage() {
     };
 
     Api.get('/login', data).then(res => {
-      // console.log('res', res);
-      // console.log('SUCCESS', res);
-      // alert('LOGIN SUCCESS');
-      // localStorage.setItem('token', res.token)
+      alert('LOGIN SUCCESS');
+      localStorage.setItem('token', res.token)
     });
   };
   //
